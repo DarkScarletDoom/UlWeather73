@@ -10,7 +10,14 @@ document.getElementById('searchInput').onclick = function() {
 
         document.getElementById('close').onclick = function() { //обработка события закрытия окна
             closeModal()
-            enableScroll()
+        }
+
+        modalContent = document.getElementById("modal-content")
+        modalWindow.onclick = (event) => {
+            const withinBoundaries = event.composedPath().includes(modalContent) //получаем путь до объекта включая модальное окно
+            if (!withinBoundaries) {
+                closeModal()
+            }
         }
 
         const input = document.querySelector('#searchCity')
