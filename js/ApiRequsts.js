@@ -3,8 +3,10 @@ function currentWeatherApiRequest(city) {
     currentWeatherUrl = 'https://api.openweathermap.org/data/2.5/weather?q=' + city + '&lang=ru&appid='
     let xhr = new XMLHttpRequest()
     xhr.open('GET', currentWeatherUrl + key, false)
+    showSpinner()
 
     xhr.onload = () => {
+        // toggleSpinner()
         weather = JSON.parse(xhr.response)
 
         if(parseInt(weather['cod']) == 200) { // если запрос прошел успешно
@@ -87,7 +89,7 @@ function weatherForFourDaysApiRequest(lat, lon) {
                 document.getElementById(i).firstChild.innerHTML = month + ' ' + day
                 document.getElementById(i).childNodes[1].innerHTML = tempArrive[i].toString() + '° '
                 document.getElementById(i).lastChild.innerHTML = windSpeed[i] + ' м/с'
-
+                hideSpinner()
             }
         }
 

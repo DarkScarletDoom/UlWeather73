@@ -8,6 +8,10 @@
     <title>ULWeather73: Погода</title>
 </head>
 <body>
+    <div id="load">
+        <div id="spinner"></div>
+    </div>
+
     <a href="" id="error"></a>
 
     <div id="modal">
@@ -19,7 +23,7 @@
                 <img id="close" src="img/close.png" alt="">
             </div>
 
-            <ul id="cities-list">
+            <ul id="cities-list" style="overflow: auto;">
                 <li class="initialLi">Москва</li>
                 <li class="initialLi">Санкт-Петербург</li>
                 <li class="initialLi">Казань</li>

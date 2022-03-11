@@ -1,10 +1,8 @@
 function addNewLiElementInList(city, acc){  // добавление li в список
-    if(acc < 9) {
         var ul = document.getElementById("cities-list");
         var li = document.createElement("li");
         li.appendChild(document.createTextNode(city));
         ul.appendChild(li);
-    }
 }
 
 function listCleaning(list){ // очистка списка
@@ -25,6 +23,16 @@ function enableScroll() {
 	document.body.classList.remove('disable-scroll');
 	window.scroll({ top: pagePosition, left: 0 });
 	document.body.removeAttribute('data-position');
+}
+
+function hideSpinner(){
+    spinner = document.getElementById("load")
+    spinner.style.display = 'none'
+}
+
+function showSpinner(){
+    spinner = document.getElementById("load")
+    spinner.style.display = 'flex'
 }
 
 function closeModal(){

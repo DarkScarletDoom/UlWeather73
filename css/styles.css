@@ -4,6 +4,38 @@ body{
     height: 100vh;
 }
 
+#load{
+    justify-content: center;
+    align-items: center;
+    z-index: 110;
+    position: fixed;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+
+#spinner{
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;
+    border: 2px solid #8d8d8d;
+    border-top: 2px solid #ffffff;
+    animation-name: spinner;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+@keyframes spinner {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
 ::-webkit-scrollbar {
     width: 0;
   } 
