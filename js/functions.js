@@ -36,15 +36,13 @@ function showSpinner(){
 }
 
 function closeModal(){
-    if (modalWindow.style.display == "flex") {
-        modalWindow.style.display = ""
-        enableScroll()
-        document.getElementById('searchCity').value = ''
-        listCleaning(document.querySelector("#cities-list"))
-        initialLi.forEach(elem => {
-            addNewLiElementInList(elem, 1)
-        })
-    }
+    modalWindow.classList.remove('visible')
+    enableScroll()
+    document.getElementById('searchCity').value = ''
+    listCleaning(document.querySelector("#cities-list"))
+    initialLi.forEach(elem => {
+        addNewLiElementInList(elem, 1)
+    })
 }
 
 function addEnterListener() {

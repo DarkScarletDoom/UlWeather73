@@ -26,6 +26,7 @@ function currentWeatherApiRequest(city) {
 
         else{  // обработка ошибки
             response = weather
+            hideSpinner()
 
             // получение значений об ошибке
             cod = response['cod']
@@ -44,6 +45,7 @@ function currentWeatherApiRequest(city) {
         }
     }
     xhr.onerror = () => {  // если запрос не прошел совсем
+        hideSpinner()
         document.getElementById('main').style.display = 'none'
         console.log('error')
         error = document.getElementById('error')
@@ -65,6 +67,7 @@ function weatherForFourDaysApiRequest(lat, lon) {
         if(parseInt(weather['cod']) == 200) { // если запрос прошел успешно
 
             weather = JSON.parse(xhr.response)
+            console.log(weather)
 
             // получение температуры в массив
             tempArrive = []

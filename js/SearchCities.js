@@ -1,8 +1,9 @@
 document.getElementById('searchInput').onclick = function() { 
-    modalWindow = document.getElementById('modal')
+    modalWindow = document.querySelector('.modal')
 
     if (modalWindow.style.display == "") { // обработка события открытия окна
-        modalWindow.style.display = 'flex'
+        // modalWindow.style.display = 'flex'
+        modalWindow.classList.add('visible')
 
         if(modalWindow.style.display == 'flex'){ 
             disableScroll() 
